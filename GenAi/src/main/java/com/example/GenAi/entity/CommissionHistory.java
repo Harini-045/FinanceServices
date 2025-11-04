@@ -1,15 +1,8 @@
 package com.example.GenAi.entity;
 
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "commission_history")
 public class CommissionHistory {
 
@@ -27,6 +20,44 @@ public class CommissionHistory {
     @Column(name = "commission_amount")
     private Double commissionAmount;
 
+    public CommissionHistory() {}
 
-   
+    public CommissionHistory(Long commissionId, String companyId, String projectId, Double commissionAmount) {
+        this.commissionId = commissionId;
+        this.companyId = companyId;
+        this.projectId = projectId;
+        this.commissionAmount = commissionAmount;
+    }
+
+    public Long getCommissionId() {
+        return commissionId;
+    }
+
+    public void setCommissionId(Long commissionId) {
+        this.commissionId = commissionId;
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public Double getCommissionAmount() {
+        return commissionAmount;
+    }
+
+    public void setCommissionAmount(Double commissionAmount) {
+        this.commissionAmount = commissionAmount;
+    }
 }
